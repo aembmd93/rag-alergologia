@@ -1,0 +1,9 @@
+streamlit==1.36.0
+google-genai==2.4.0
+pinecone==3.2.2
+PyMuPDF==1.27.2.3
+pytesseract==0.3.13
+Pillow==10.4.0
+python-dotenv==1.0.1
+pandas==2.2.2
+numpy==1.26.4

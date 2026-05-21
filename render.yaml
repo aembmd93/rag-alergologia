@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: rag-alergologia
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: apt-get update -qq && apt-get install -y -qq tesseract-ocr tesseract-ocr-spa libgl1-mesa-glx && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.headless true --server.address 0.0.0.0
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_INDEX_NAME
+        sync: false
+      - key: PINECONE_ENVIRONMENT
+        sync: false
+      - key: STREAMLIT_BROWSER_GATHER_USAGE_STATS
+        value: "false"
+      - key: STREAMLIT_SERVER_ENABLE_CORS
+        value: "false"
